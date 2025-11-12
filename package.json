@@ -1,7 +1,7 @@
 {
-  "name": "rmazocar-dayjs (ESM fork)",
+  "name": "rmazocar-dayjs",
   "version": "1.0.0",
-  "description": "2KB immutable date time library alternative to Moment.js with the same modern API ",
+  "description": "2KB immutable date time library alternative to Moment.js with the same modern API  (ESM fork of dayjs)",
   "type": "module",
   "main": "./dayjs.min.js",
   "types": "./index.d.ts",
