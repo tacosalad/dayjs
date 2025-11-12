@@ -7,7 +7,7 @@ export default (option, Dayjs, dayjs) => {
     customConfigKeys.forEach((c) => {
       localeConfig[c] = customConfig[c]
     })
-    return localeConfig // eslint-disable-line consistent-return
+    return localeConfig
   }
 }
 

@@ -2,7 +2,7 @@
 import dayjs from 'dayjs'
 
 function plural(n) {
-  return (n % 10 < 5) && (n % 10 > 1) && ((~~(n / 10) % 10) !== 1) // eslint-disable-line
+  return (n % 10 < 5) && (n % 10 > 1) && ((~~(n / 10) % 10) !== 1)
 }
 /* eslint-disable */ 
 function translate(number, withoutSuffix, key) {

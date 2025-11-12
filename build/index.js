@@ -1,9 +1,14 @@
-const rollup = require('rollup')
-const configFactory = require('./rollup.config')
-const fs = require('fs')
-const util = require('util')
-const path = require('path')
-const { ncp } = require('ncp')
+import * as rollup from 'rollup'
+import configFactory from './rollup.config.js'
+import fs from 'fs'
+import util from 'util'
+import path from 'path'
+import ncpPkg from 'ncp'
+const { ncp } = ncpPkg
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const { promisify } = util
 
@@ -35,7 +40,7 @@ async function listLocaleJson(localeArr) {
 
 (async () => {
   try {
-    /* eslint-disable no-restricted-syntax, no-await-in-loop */
+
     // We use await-in-loop to make rollup run sequentially to save on RAM
     const locales = await promisifyReadDir(localePath)
     for (const l of locales) {
@@ -43,7 +48,8 @@ async function listLocaleJson(localeArr) {
       await build(configFactory({
         input: `./src/locale/${l}`,
         fileName: `./locale/${l}`,
-        name: `dayjs_locale_${formatName(l)}`
+        name: `dayjs_locale_${formatName(l)}`,
+        format: 'es'
       }))
     }
 
@@ -53,13 +59,16 @@ async function listLocaleJson(localeArr) {
       await build(configFactory({
         input: `./src/plugin/${plugin}/index`,
         fileName: `./plugin/${plugin}.js`,
-        name: `dayjs_plugin_${formatName(plugin)}`
+        name: `dayjs_plugin_${formatName(plugin)}`,
+        format: 'es'
       }))
     }
 
-    build(configFactory({
+    // Build main dayjs files
+    await build(configFactory({
       input: './src/index.js',
-      fileName: './dayjs.min.js'
+      fileName: './dayjs.min.js',
+      format: 'es'
     }))
 
     await promisify(ncp)('./types/', './')
@@ -67,6 +76,6 @@ async function listLocaleJson(localeArr) {
     // list locales
     await listLocaleJson(locales)
   } catch (e) {
-    console.error(e) // eslint-disable-line no-console
+    console.error(e)
   }
 })()

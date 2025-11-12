@@ -1,4 +1,4 @@
-// eslint-disable-next-line valid-typeof
+
 const isBigInt = num => typeof num === 'bigint'
 export default (o, c, dayjs) => {
   const proto = c.prototype

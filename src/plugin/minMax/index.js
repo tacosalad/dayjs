@@ -23,11 +23,11 @@ export default (o, c, d) => {
   }
 
   d.max = function () {
-    const args = [].slice.call(arguments, 0) // eslint-disable-line prefer-rest-params
+    const args = [].slice.call(arguments, 0)
     return sortBy('isAfter', args)
   }
   d.min = function () {
-    const args = [].slice.call(arguments, 0) // eslint-disable-line prefer-rest-params
+    const args = [].slice.call(arguments, 0)
     return sortBy('isBefore', args)
   }
 }

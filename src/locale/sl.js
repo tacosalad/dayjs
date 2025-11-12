@@ -2,14 +2,14 @@
 import dayjs from 'dayjs'
 
 function dual(n) {
-  return (n % 100) == 2 // eslint-disable-line
+  return (n % 100) == 2
 }
 
 function threeFour(n) {
-  return (n % 100) == 3 || (n % 100) == 4 // eslint-disable-line
+  return (n % 100) == 3 || (n % 100) == 4
 }
 
-/* eslint-disable */
+
 function translate(number, withoutSuffix, key, isFuture) {
   const result = `${number} `
   switch (key) {
@@ -65,7 +65,7 @@ function translate(number, withoutSuffix, key, isFuture) {
   }
 }
 
-/* eslint-enable */
+
 const locale = {
   name: 'sl',
   weekdays: 'nedelja_ponedeljek_torek_sreda_četrtek_petek_sobota'.split('_'),

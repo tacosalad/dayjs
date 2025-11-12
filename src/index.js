@@ -8,7 +8,7 @@ Ls[L] = en
 
 const IS_DAYJS = '$isDayjsObject'
 
-// eslint-disable-next-line no-use-before-define
+
 const isDayjs = d => d instanceof Dayjs || !!(d && d[IS_DAYJS])
 
 const parseLocale = (preset, object, isLocal) => {
@@ -40,11 +40,11 @@ const dayjs = function (date, c) {
   if (isDayjs(date)) {
     return date.clone()
   }
-  // eslint-disable-next-line no-nested-ternary
+
   const cfg = typeof c === 'object' ? c : {}
   cfg.date = date
-  cfg.args = arguments// eslint-disable-line prefer-rest-params
-  return new Dayjs(cfg) // eslint-disable-line no-use-before-define
+  cfg.args = arguments
+  return new Dayjs(cfg)
 }
 
 const wrapper = (date, instance) =>
@@ -107,7 +107,7 @@ class Dayjs {
     this.$ms = $d.getMilliseconds()
   }
 
-  // eslint-disable-next-line class-methods-use-this
+
   $utils() {
     return Utils
   }
@@ -154,7 +154,7 @@ class Dayjs {
     const instanceFactorySet = (method, slice) => {
       const argumentStart = [0, 0, 0, 0]
       const argumentEnd = [23, 59, 59, 999]
-      return Utils.w(this.toDate()[method].apply( // eslint-disable-line prefer-spread
+      return Utils.w(this.toDate()[method].apply(
         this.toDate('s'),
         (isStartOf ? argumentStart : argumentEnd).slice(slice)
       ), this)
@@ -227,7 +227,7 @@ class Dayjs {
   }
 
   add(number, units) {
-    number = Number(number) // eslint-disable-line no-param-reassign
+    number = Number(number)
     const unit = Utils.p(units)
     const instanceFactorySet = (n) => {
       const d = dayjs(this)

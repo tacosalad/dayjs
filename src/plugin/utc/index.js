@@ -24,8 +24,8 @@ function offsetFromString(value = '') {
 export default (option, Dayjs, dayjs) => {
   const proto = Dayjs.prototype
   dayjs.utc = function (date) {
-    const cfg = { date, utc: true, args: arguments } // eslint-disable-line prefer-rest-params
-    return new Dayjs(cfg) // eslint-disable-line no-use-before-define
+    const cfg = { date, utc: true, args: arguments }
+    return new Dayjs(cfg)
   }
 
   proto.utc = function (keepLocalTime) {

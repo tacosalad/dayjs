@@ -21,16 +21,16 @@ const locale = {
   relativeTime: {
     future: 'oor %s',
     past: '%s gelede',
-    s: "'n paar sekondes",
-    m: "'n minuut",
+    s: '\'n paar sekondes',
+    m: '\'n minuut',
     mm: '%d minute',
-    h: "'n uur",
+    h: '\'n uur',
     hh: '%d ure',
-    d: "'n dag",
+    d: '\'n dag',
     dd: '%d dae',
-    M: "'n maand",
+    M: '\'n maand',
     MM: '%d maande',
-    y: "'n jaar",
+    y: '\'n jaar',
     yy: '%d jaar'
   }
 }

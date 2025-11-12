@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+
 export default (o, c, d) => {
   /* istanbul ignore next line */
   if (!process || process.env.NODE_ENV !== 'production') {

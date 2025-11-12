@@ -23,13 +23,13 @@ const unitToMS = {
   weeks: MILLISECONDS_A_WEEK
 }
 
-const isDuration = d => d instanceof Duration // eslint-disable-line no-use-before-define
+const isDuration = d => d instanceof Duration
 
 let $d
 let $u
 
 const wrapper = (input, instance, unit) =>
-  new Duration(input, unit, instance.$l) // eslint-disable-line no-use-before-define
+  new Duration(input, unit, instance.$l)
 
 const prettyUnit = unit => `${$u.p(unit)}s`
 const isNegative = number => number < 0

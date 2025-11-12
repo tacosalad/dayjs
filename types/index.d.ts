@@ -1,7 +1,5 @@
 /// <reference path="./locale/index.d.ts" />
 
-export = dayjs;
-
 declare function dayjs (date?: dayjs.ConfigType): dayjs.Dayjs
 
 declare function dayjs (date?: dayjs.ConfigType, format?: dayjs.OptionType, strict?: boolean): dayjs.Dayjs
@@ -427,3 +425,5 @@ declare namespace dayjs {
 
   const Ls : { [key: string] :  ILocale }
 }
+
+export default dayjs;

@@ -2,10 +2,10 @@
 import dayjs from 'dayjs'
 
 function plural(n) {
-  return (n > 1) && (n < 5) && (~~(n / 10) !== 1) // eslint-disable-line
+  return (n > 1) && (n < 5) && (~~(n / 10) !== 1)
 }
 
-/* eslint-disable */
+
 function translate(number, withoutSuffix, key, isFuture) {
   const result = `${number} `
   switch (key) {
@@ -48,7 +48,7 @@ function translate(number, withoutSuffix, key, isFuture) {
       return `${result}rokmi`
   }
 }
-/* eslint-enable */
+
 const locale = {
   name: 'sk',
   weekdays: 'nedeľa_pondelok_utorok_streda_štvrtok_piatok_sobota'.split('_'),

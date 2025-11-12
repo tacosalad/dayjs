@@ -1,6 +1,10 @@
 import fs from 'fs'
 import path from 'path'
+import { fileURLToPath } from 'url'
 import dayjs from '../../src'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const localeDir = '../../src/locale'
 const Locale = []
@@ -12,7 +16,6 @@ fs.readdirSync(path.join(__dirname, localeDir))
     const fPath = path.join(__dirname, localeDir, file)
     Locale.push({
       name: file,
-      // eslint-disable-next-line import/no-dynamic-require, global-require
       content: require(fPath).default,
       file: fs.readFileSync(fPath, 'utf-8')
     })
@@ -75,12 +78,12 @@ Locale.forEach((locale) => {
     expect(dayjs().locale(name).$locale().name).toBe(name)
     if (formats) {
       const {
-        LT,
-        LTS,
-        L,
-        LL,
-        LLL,
-        LLLL,
+        LT: _LT,
+        LTS: _LTS,
+        L: _L,
+        LL: _LL,
+        LLL: _LLL,
+        LLLL: _LLLL,
         l,
         ll,
         lll,
